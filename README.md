@@ -1,5 +1,5 @@
 # Dialogue Chat Bot: StackOverflow Assistant
-[**ONGOING Natural Language Processing (NLP) Project**] I will be updating this project weekly or biweekly as I learn something new from the course.
+**[ONGOING Natural Language Processing (NLP) Project]** I will be updating this project weekly or biweekly as I learn something new from the course.
 
 I am tasked to write a bot, which will not only **answer programming-related questions**, but also will be able to **maintain a dialogue**. I am also tasked to detect the intent of the user from the question (we could have had a 'Question answering mode' check-box in the bot, but it wouldn't fun at all, would it?). So the first thing I need to do is to **distinguish programming-related questions from general ones**. 
 
