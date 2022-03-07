@@ -45,6 +45,15 @@ def load_embeddings(embeddings_path):
 
     ########################
     #### YOUR CODE HERE ####
+    starspace_embeddings = dict()
+
+    for line in open(embeddings_path, encoding='utf-8'):
+        row = line.strip().split('\t')
+        starspace_embeddings[row[0]]=np.array(row[1:],dtype=np.float32)
+    # dimensions of the embeddings
+    starspace_embeddings_dim = embeddings[list(embeddings)[0]].shape[0]
+
+    return starspace_embeddings, starspace_embeddings_dim
     ########################
 
     # remove this when you're done
@@ -61,6 +70,11 @@ def question_to_vec(question, embeddings, dim):
 
     ########################
     #### YOUR CODE HERE ####
+    words_embedding = [embeddings[word] for word in question.split() if word in embeddings]
+    if not words_embedding:
+        return np.zeros(dim)
+    words_embedding = np.array(words_embedding)
+    return words_embedding.mean(axis=0)
     ########################
 
     # remove this when you're done
