@@ -1,4 +1,4 @@
-# Dialogue Chat Bot: StackOverflow Assistant
+# Dialogue Chatbot: StackOverflow Assistant
 ## [ONGOING] Natural Language Processing Project. 
 **NB: I will be updating this project weekly or biweekly as I learn something new from the [course](https://www.coursera.org/learn/language-processing).**
 
