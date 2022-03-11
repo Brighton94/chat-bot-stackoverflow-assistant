@@ -1,7 +1,7 @@
 # Dialogue Chatbot: StackOverflow Assistant
 ## Natural Language Processing Project. 
 
-I wrote a bot which was not only able to answer **_programming-related questions_**, but also **_maintain a dialogue_**. In a nutshell, I had first to detect the intent of the user from the question; so I had to **_distinguish programming-related questions from general ones_**. 
+I wrote a bot which was not only able to answer **_programming-related questions_**, but also **_maintain a dialogue_**. In a nutshell, I first had to detect the intent of the user from the question; so I had to **_distinguish programming-related questions from general ones_**. 
 
 Secondly, I had to find a relevant answer (a thread from StackOverflow) on a question using vector representations to calculate similarity between the question and existing threads. So the idea was to convert a question into a vector and calculate the cosine similarity, for instance, with thread vectors. 
 
@@ -18,4 +18,4 @@ and/or
   - Selective model: embeddings-based ranking.
   - Selective model: DSSM.
 
-Also, one thing to note about dialogue chatbots is that choosing the right dataset to train a chatbot can make a big difference.
+Also, one thing to note about dialogue chatbots is that choosing the right dataset to train them can make a big difference.
