@@ -1,7 +1,7 @@
 # Dialogue Chatbot: StackOverflow Assistant
 ## Natural Language Processing Project. 
 
-I wrote a bot, which will not only **_answer programming-related questions_**, but also will be able to **_maintain a dialogue_**. I was also tasked to detect the intent of the user from the question. So the first thing I had to do was to **_distinguish programming-related questions from general ones_**. 
+I wrote a bot, which was able to not only answer **_programming-related questions_**, but also **_maintain a dialogue_**. I had to also detect the intent of the user from the question. So the first thing I had to do was to **_distinguish programming-related questions from general ones_**. 
 
 Afterwards, I had to find a relevant answer (a thread from StackOverflow) on a question using vector representations to calculate similarity between the question and existing threads. From the previous assingment, the `question_to_vec` function was able to create such a representation based on word vectors.  
 
