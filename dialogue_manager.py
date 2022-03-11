@@ -1,10 +1,12 @@
 import os
-from sklearn.metrics.pairwise import pairwise_distances_argmin
+from sklearn.metrics.pairwise import pairwise_distances
 
 from chatterbot import ChatBot
 from chatterbot.trainers import ChatterBotCorpusTrainer
 from utils import *
+import logging
 
+#!python -m chatterbot --version
 
 class ThreadRanker(object):
     def __init__(self, paths):
@@ -23,9 +25,9 @@ class ThreadRanker(object):
         thread_ids, thread_embeddings = self.__load_embeddings_by_tag(tag_name)
 
         # HINT: you have already implemented a similar routine in the 3rd assignment.
-        
         question_vec = question_to_vec(question, self.word_embeddings, self.embeddings_dim) #### YOUR CODE HERE ####
-        best_thread = pairwise_distances_argmin(thread_embeddings, question_vec) #### YOUR CODE HERE ####
+        thread_num = len(thread_ids)
+        best_thread =  np.argmin(pairwise_distances(thread_embeddings,question_vec.reshape(1,-1), metric = 'cosine')) #### YOUR CODE HERE ####
         
         return thread_ids[best_thread]
 
@@ -57,22 +59,24 @@ class DialogueManager(object):
         
         ########################
         #### YOUR CODE HERE ####
-
-        # Create a new chat bot named Brian
-        chatbot = ChatBot('Brian')
-
-        trainer = ChatterBotCorpusTrainer(chatbot)
-
-        trainer.train("chatterbot.corpus.english")
-
-        self.chitchat_bot = chatbot
         ########################
+        
+        # Enable info level logging
+        #logging.basicConfig(level=logging.INFO)
 
+        chatbot = ChatBot('Daru')
+        
+        # Start by training our bot with the ChatterBot corpus data
+        trainer = ChatterBotCorpusTrainer(chatbot)
+        trainer.train('chatterbot.corpus.english')
+        
+        self.chat_bot = chatbot
+                
         # remove this when you're done
-        raise NotImplementedError(
-            "Open dialogue_manager.py and fill with your code. In case of Google Colab, download"
-            "(https://github.com/hse-aml/natural-language-processing/blob/master/project/dialogue_manager.py), "
-            "edit locally and upload using '> arrow on the left edge' -> Files -> UPLOAD")
+        #raise NotImplementedError(
+        #    "Open dialogue_manager.py and fill with your code. In case of Google Colab, download"
+        #    "(https://github.com/hse-aml/natural-language-processing/blob/master/project/dialogue_manager.py), "
+        #    "edit locally and upload using '> arrow on the left edge' -> Files -> UPLOAD")
        
     def generate_answer(self, question):
         """Combines stackoverflow and chitchat parts using intent recognition."""
@@ -80,14 +84,14 @@ class DialogueManager(object):
         # Recognize intent of the question using `intent_recognizer`.
         # Don't forget to prepare question and calculate features for the question.
         
-        prepared_question = text_prepare(question) #### YOUR CODE HERE ####
-        features = self.tfidf_vectorizer.transform([prepared_question]) #### YOUR CODE HERE ####
-        intent = self.intent_recognizer.predict(features)[0]  #### YOUR CODE HERE ####
-
+        prepared_question = [text_prepare(question)] #### YOUR CODE HERE ####
+        features = self.tfidf_vectorizer.transform(prepared_question) #### YOUR CODE HERE ####
+        intent = self.intent_recognizer.predict(features)[0] #### YOUR CODE HERE ####
+        
         # Chit-chat part:   
         if intent == 'dialogue':
             # Pass question to chitchat_bot to generate a response.       
-            response = self.chitchat_bot.get_response(question) #### YOUR CODE HERE ####
+            response = self.chat_bot.get_response(question) #### YOUR CODE HERE ####
             return response
         
         # Goal-oriented part:
@@ -96,6 +100,6 @@ class DialogueManager(object):
             tag = self.tag_classifier.predict(features)[0] #### YOUR CODE HERE ####
             
             # Pass prepared_question to thread_ranker to get predictions.
-            thread_id = self.thread_ranker.get_best_thread(prepared_question, tag) #### YOUR CODE HERE ####
+            thread_id = self.thread_ranker.get_best_thread(prepared_question[0], tag) #### YOUR CODE HERE ####
             
             return self.ANSWER_TEMPLATE % (tag, thread_id)
