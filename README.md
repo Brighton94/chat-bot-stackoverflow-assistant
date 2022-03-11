@@ -11,7 +11,7 @@ As next steps of this project I could:
 
 1. Build a **Telegram chatbot** hosted on AWS or on Flask to get a web-server that servers as a chatbot
 and/or
-2. **build a custom chatbot**. Since it is a difficult task to evaluate the quality of a conversation with a chatbot, it is advised to use the previous Chatterbot as a baseline to get a good sense of the quality of the conversation. There are various recommendations made for how to build a custom chatbot. Here are the 5 approaches to consider:
+2. **build a custom chatbot**. There are various recommendations made for how to build a custom chatbot. Here are the 5 approaches to consider:
   - Generative model: n-gram language model.
   - Generative model: LSTM-based language model.
   - Conditional language modeling: seq2seq model.
