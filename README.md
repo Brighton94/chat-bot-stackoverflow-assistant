@@ -7,7 +7,7 @@ Afterwards, I had to find a relevant answer (a thread from StackOverflow) on a q
 
 At the end, I combined everything that I have done and enabled the bot to maintain a dialogue. I trained/taught the bot to sequentially determine the intent and, depending on the intent, select the best answer. As soon as this was done, I had the have the opportunity to chat with the bot and check how well it answers both programming-related and general questions such as: "Hey", "How are you doing?", "What's your hobby?", "How to write a loop in python?", "How to delete rows in pandas?", "python3 re", "What is the difference between c and c++", "Multithreading in Java", "Catch exceptions C++", "What is AI?", etc.
 
-As next steps of this project I could:
+## Possible next steps: Custom Chatbot
 
 1. Build a **_Telegram chatbot_** hosted on AWS or on Flask to get a web-server that servers as a chatbot
 and/or
