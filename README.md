@@ -1,11 +1,11 @@
 # Dialogue Chatbot: StackOverflow Assistant
 ## Natural Language Processing Project. 
 
-I wrote a bot which was not only able to answer **_programming-related questions_**, but also **_maintain a dialogue_**. I had to also detect the intent of the user from the question. So the first thing I had to do was to **_distinguish programming-related questions from general ones_**. 
+I wrote a bot which was not only able to answer **_programming-related questions_**, but also **_maintain a dialogue_**. In a nutshell, I had first to detect the intent of the user from the question; so I had to **_distinguish programming-related questions from general ones_**. 
 
-Afterwards, I had to find a relevant answer (a thread from StackOverflow) on a question using vector representations to calculate similarity between the question and existing threads. So the idea was to convert a question into a vector and calculate the cosine similarity, for instance, with thread vectors. 
+Secondly, I had to find a relevant answer (a thread from StackOverflow) on a question using vector representations to calculate similarity between the question and existing threads. So the idea was to convert a question into a vector and calculate the cosine similarity, for instance, with thread vectors. 
 
-At the end, I combined everything that I have done and enabled the bot to maintain a dialogue. I trained/taught the bot to sequentially determine the intent and, depending on the intent, select the best answer. As soon as this was done, I had the have the opportunity to chat with the bot and check how well it answers both programming-related and general questions such as: "Hey", "How are you doing?", "What's your hobby?", "How to write a loop in python?", "How to delete rows in pandas?", "python3 re", "What is the difference between c and c++", "Multithreading in Java", "Catch exceptions C++", "What is AI?", etc.
+Lastly, I combined everything that I have done and enabled the bot to maintain a dialogue. I trained/taught the bot to sequentially determine the intent and, depending on the intent, select the best answer. As soon as this was done, I had the have the opportunity to chat with the bot and check how well it answers both programming-related and general questions such as: "Hey", "How are you doing?", "What's your hobby?", "How to write a loop in python?", "How to delete rows in pandas?", "python3 re", "What is the difference between c and c++", "Multithreading in Java", "Catch exceptions C++", "What is AI?", etc.
 
 ## Possible next steps: Custom Chatbot
 
