@@ -1,5 +1,5 @@
 # Dialogue Chatbot: StackOverflow Assistant
-## Natural Language Processing Project. 
+## A Natural Language Processing Project. 
 
 The main focus here are task-oriented dialog systems like Apple Siri or Amazon Alexa. I have currently wrote a chatbot which is not only able to answer **_programming-related questions_**, but also **_maintain a dialogue_**. In a nutshell, I first had to detect the intent of the user from the question; so I had to **_distinguish programming-related questions from general ones_**. 
 
