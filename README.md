@@ -13,11 +13,18 @@ Lastly, I combined everything that I have done and enabled the bot to maintain a
 and/or
 2. **_build a custom chatbot_**. There are various recommendations to consider when building a custom chatbot:
   - Generative model: n-gram language model.
-      - Pros: 
+      - Simple to implement.
   - Generative model: LSTM-based language model.
+      - RNNs were a significant step in research compared to n-gram models.
+      - However, they may take more time and expertise to train.
   - Conditional language modeling: seq2seq model.
+      - The "right" way to implement a conversational chatbot.
+      - Language generation is more a complicated task; may take days of CPU or hours of GPU time to train the seq2seq model.
   - Selective model: embeddings-based ranking.
+      - Similar approach as that of the StackOverflow bot.
+      - Basically --> learn unsupervised sentence embeddings (e.g. sent2vec) on dialogue corpus or use question-answer pairs to train supervised embeddings (e.g. StarSpace). Then score all possible answers and replies accoridng to their similarity.
   - Selective model: eep Structures Semantic Model (DSSM).
+      - Not covered in the course, but DSSM is a popular way to build a supervised ranking system.
 
 Also, one thing to note about dialogue chatbots is that choosing the right dataset to train them can make a big difference.
 
