@@ -16,6 +16,16 @@ and/or
   - Generative model: LSTM-based language model.
   - Conditional language modeling: seq2seq model.
   - Selective model: embeddings-based ranking.
-  - Selective model: DSSM.
+  - Selective model: eep Structures Semantic Model (DSSM).
 
 Also, one thing to note about dialogue chatbots is that choosing the right dataset to train them can make a big difference.
+
+Here are a few dialogue datasets to train the models that were recommended:
+
+  - [Cornell Movie Dialogs](https://www.cs.cornell.edu/%7Ecristian/Cornell_Movie-Dialogs_Corpus.html) - small corpus of dialogues from English movies.
+
+  - [OpenSubtitles](https://opus.nlpl.eu/OpenSubtitles.php) - bigger corpus of English subtitles (but also noisier).
+
+There are a a [set of tools](https://github.com/Brighton94/chat-bot-stackoverflow-assistant/tree/main/download_read_utils) that were provided for working with these datasets. This includes shell scripts for downloading raw data, Python library for reading it into memory and a simple [example](https://github.com/Brighton94/chat-bot-stackoverflow-assistant/blob/main/example.py) to show how to use it. Note, that library already performs data tokenization, filtering of long sentences and splitting conversations into pairs of sentences that will serve as training data for your chat-bot. However, feel free to change any of those bits as you see fit.
+
+You can also find more datasets here.
