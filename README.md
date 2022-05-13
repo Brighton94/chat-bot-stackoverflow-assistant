@@ -22,8 +22,8 @@ and/or
       - Language generation is more a complicated task; may take days of CPU or hours of GPU time to train the seq2seq model.
   - Selective model: embeddings-based ranking.
       - Similar approach as that of the StackOverflow bot.
-      - Basically, 
-      👉 learn unsupervised sentence embeddings (e.g. sent2vec) on dialogue corpus or use question-answer pairs to train supervised embeddings (e.g. StarSpace).
+      - Basically, <br />
+      👉 learn unsupervised sentence embeddings (e.g. [sent2vec](https://github.com/epfml/sent2vec)) on dialogue corpus or use question-answer pairs to train supervised embeddings (e.g. [StarSpace](https://github.com/facebookresearch/StarSpace)). <br />
       👉 Then score all possible answers and replies accoridng to their similarity.
   - Selective model: eep Structures Semantic Model (DSSM).
       - Not covered in the course, but DSSM is a popular way to build a supervised ranking system.
