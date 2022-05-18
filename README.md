@@ -23,7 +23,7 @@ and/or
   - Selective model: embeddings-based ranking.
       - Similar approach as that of the StackOverflow bot.
       - Basically, <br />
-      👉 learn unsupervised sentence embeddings (e.g. [sent2vec](https://github.com/epfml/sent2vec)) on dialogue corpus or use question-answer pairs to train supervised embeddings (e.g. [StarSpace](https://github.com/facebookresearch/StarSpace)) (note that StarSpace cannot run on Windows and it is recommended to use provided docker container or other alternatives). <br />
+      👉 learn unsupervised sentence embeddings (e.g. [sent2vec](https://github.com/epfml/sent2vec)) on dialogue corpus or use question-answer pairs to train supervised embeddings (e.g. [StarSpace](https://github.com/facebookresearch/StarSpace)) (note that StarSpace cannot run on Windows and it is recommended to use a docker container or other alternatives). <br />
       👉 Then score all possible answers and replies accoridng to their similarity.
   - Selective model: eep Structures Semantic Model (DSSM).
       - Not covered in the course, but DSSM is a popular way to build a supervised ranking system.
@@ -36,6 +36,6 @@ Here are a few dialogue datasets to train the models that were recommended:
 
   - [OpenSubtitles](https://opus.nlpl.eu/OpenSubtitles.php) - bigger corpus of English subtitles (but also noisier).
 
-There are a a [set of tools](https://github.com/Brighton94/chat-bot-stackoverflow-assistant/tree/main/download_read_utils) that were provided for working with these datasets. This includes shell scripts for downloading raw data, Python library for reading it into memory and a simple [example](https://github.com/Brighton94/chat-bot-stackoverflow-assistant/blob/main/download_read_utils/example.py) to show how to use it. Note, that the [datasets](https://github.com/Brighton94/chat-bot-stackoverflow-assistant/blob/main/download_read_utils/datasets.py) library already performs data tokenization, filtering of long sentences and splitting conversations into pairs of sentences that will serve as training data for your chat-bot. However, feel free to change any of those bits as you see fit.
+There are a a [set of tools](https://github.com/Brighton94/chat-bot-stackoverflow-assistant/tree/main/download_read_utils) that were provided for working with these datasets. These includes shell scripts for downloading raw data, Python library for reading it into memory and a simple [example](https://github.com/Brighton94/chat-bot-stackoverflow-assistant/blob/main/download_read_utils/example.py) to show how to use it. Note, that the [datasets](https://github.com/Brighton94/chat-bot-stackoverflow-assistant/blob/main/download_read_utils/datasets.py) library already performs data tokenization, filtering of long sentences and splitting conversations into pairs of sentences that will serve as training data for your chat-bot. However, feel free to change any of those bits as you see fit.
 
 More conversational datasets can be found [here](https://github.com/Conchylicultor/DeepQA#presentation).
